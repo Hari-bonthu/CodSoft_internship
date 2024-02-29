@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    /*nav */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 80%;
+        margin: auto;
+        padding: 1.4rem 1rem;
+        background-color: #484545;
+        backdrop-filter: blur(10px);
+        border-radius: 3rem;
+        margin-top: 1rem;
+    }
+
+    .logo {
+        position: relative;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .logo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: hsl(0, 1%, 29%);
+        animation: showRight .3s ease forwards ;
+        animation-delay: .1s;
+    }
+
+    .logo a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    ul {
+        background-color: transparent;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+
+    li {
+        padding: 0rem 1.1rem;
+        float: left;
+    }
+
+    li a {
+        color: #e96d3f;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    ul li a {
+        position: relative;
+    }
+
+    li a.active,
+    li a:hover {
+        color: #fff;
+        transition: all .3s ease;
+    }
+
+    ul li a::before {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    ul li a::before {
+        transform: scale(0, 1);
+        transition: transform .3s ease;
+    }
+
+    ul li a:hover::before {
+        transform: scale(1, 1);
+    }
+
+    .menu {
+        display: none;
+    }
+
+    #click {
+        display: none;
+    }
+
+
+    @media only screen and (max-width:700px) {
+        .logo {
+            position: relative;
+            left: .8rem;
+        }
+
+        li {
+            padding: 1rem 1.1rem;
+        }
+
+        .menu {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #fff;
+            position: relative;
+            right: 6px;
+        }
+
+        ul {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            top: 5rem;
+            left: -120%;
+            background-color: #484545;
+            backdrop-filter: blur(10px);
+        }
+
+        #click:checked~ul {
+            left: 0%;
+            transition: all 0.3s ease;
+        }
+
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        padding: 0 10%;
+        overflow:hidden;
+
+    }
+
+    .home-section {
+        max-width: 600px;
+
+    }
+
+    .home-section h1 {
+        font-size: 54px;
+        font-weight: 700;
+    }
+
+    .home-section h1::before {
+        content: '';
+        position: absolute;
+        top: 5.8rem;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: showRight .8s ease forwards ;
+        animation-delay: .3s;
+    }
+
+    .home-section h3 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #e96d3f;
+        
+    } 
+
+    .home-section p {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 20px 0 40px;
+    }
+
+    .home-section .btns {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 320px; 
+        height: 40px; 
+      }
+
+      .home-section .btns::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 110%;
+        background:#Fff;
+        animation: showRight .3s ease forwards ;
+        animation-delay: 1.2s;
+        z-index: 2;
+    }
+
+      .btns a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 140px;
+        height: 100%;
+        background: #e96d3f;
+        border: 2px solid #e96d3f;
+        border-radius: 4px;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        z-index: 1;
+        overflow: hidden;
+    
+    }
+
+    .btns a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #fff;
+        z-index: -1;
+        transition: .5s;
+
+    }
+
+    .btns a:nth-child(2) {
+        background: transparent;
+        color: #e96d3f;
+    }
+
+    .btns a:hover {
+        color: #e96d3f;
+        transition: .3s;
+    }
+
+    .btns a:nth-child(2):hover {
+        color: #fff;
+        transition: .3s;
+    }
+
+    .btns a:nth-child(2)::before{
+        background: #e96d3f;
+    }
+
+    .btns a:hover::before {
+        width: 100%;
+
+    }
+
+    .social {
+        position: relative;
+        bottom: 0rem;
+        width: 15em;
+        margin-top: 2rem;
+
+    }
+
+    .social::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background:#Fff;
+        animation: showRight .3s ease forwards ;
+        animation-delay: 1.6s;
+        z-index: 2;
+    }
+
+    .social a {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        text-decoration: none;
+        border: 2px solid #e96d3f;
+        border-radius: 999px;
+        color: #e96d3f;
+        font-size: 26px;
+        padding: .3rem;
+        margin-right: .6rem;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .social a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #e96d3f;
+        z-index: -1;
+        transition: .5s;
+
+    }
+
+
+    .social a:hover::before {
+        width: 100%;
+    }
+
+    .social a:hover {
+        color: #Fff;
+        transition: .5s;
+    }
+
+
+
+    .profile {
+        position: relative;
+        left: 160px;
+    }
+
+    .profile::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background:#Fff;
+        animation: showRight .3s ease forwards ;
+        animation-delay: .8s;
+        z-index: 2;
+    }
+
+
+    .profile img {
+        border-bottom: solid 6px #484545;
+        width: 18rem;
+        height: 18rem;
+
+    }
+    @media screen and (max-width:820px) {
+        .profile img {
+            border-bottom: solid 6px #484545;
+            width: 12rem;
+            height: 12rem;
+            position: relative;
+            right: 8rem;
+        }
+
+    }
+
+  /*  @media screen and (max-width:645px) {
+        body {
+            height: 100%;
+        }
+
+        .home {
+            padding: 0 10%;
+            height: 100%;
+        }
+
+        .profile {
+            display: none;
+        }
+    }*/
+
+    @media screen and (max-width:700px) {
+       body {
+        height: 100%;
+       }
+       
+       .home {
+        padding: 0;
+        height: 100%;
+       }
+
+       .home-section {
+        max-width: 80%;
+        height: auto;
+        padding: 10%;
+        margin: 10% 0;
+       }
+
+       .profile {
+        display: none;
+    }
+      
+        
+    }
+
+/*Keyframes animation*/
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+.wrapper {
+    max-width: 120rem;
+    margin: auto;
+    width: 92%;
+    font-size: 56%;
+    margin: 3.2rem;
+}
+
+.about{
+    background: #Fff;
+}
+
+.heading-main {
+    display: block;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    color: #111
+}
+
+.heading-main::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + .5rem);
+    height: 5px;
+    width: 4rem;
+    background: #e96d3f;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px
+}
+
+.heading-sub {
+    display: block;
+    text-align: center;
+    color: #555;
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-width: 80rem;
+    margin: auto;
+    line-height: 1.6
+}
+
+.heading-content p {
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 4rem
+}
+
+.heading-content p:nth-child(1) {
+    margin-top: 2.3rem;
+}
+
+.contact-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 140px;
+        height: 3rem;
+        background: #e96d3f;
+        border: 2px solid #e96d3f;
+        border-radius: 4px;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.3rem;
+}
+
+.skills-list {
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+    background: rgba(153,153,153,.2);
+    border-radius: 5px;
+    font-weight: 600;
+    color: #666
+}
+
+.project-list {
+    width: 100%;
+    box-shadow: rgba(100,100,111,.2) 0 7px 82px 0;
+}
+
+.project-data {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2.6rem;
+}
+
+.project-data:nth-child(1) {
+    margin-top: 3.6rem;
+}
+
+.project-img {
+    padding: 2.6rem 2rem;
+}
+
+.project-img img {
+    width: 24rem;
+    height: 12rem;
+}
+
+.project-details {
+    max-width: 540px;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.project-details h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+
+}
+
+.project-details span {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 2.3;
+}
+
+form {
+    padding: 0 10% 0 0;
+}
+
+.form-container {
+    box-shadow: rgba(100,100,111,.2) 0 7px 82px 0;
+    background: #fff;
+    padding: 4rem;
+    margin-top: 6rem ;
+    max-width: 80rem;
+    text-align: right;
+    width: 75%;
+    border-radius: 5px;
+    margin: 5rem auto 0 ;
+}
+
+
+
+form label {
+    color: #666;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 1rem 0;
+    display: block;
+    text-align: left
+}
+
+form input {
+    color: #333;
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    font-weight: 600
+}
+
+form textarea {
+    color: #333;
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.sbt-btn {
+        width: 140px;
+        height: 3rem;
+        background: #fff;
+        border: 2px solid #e96d3f;
+        border-radius: 4px;
+        font-size: 20px;
+        color: #e96d3f;
+        text-decoration: none;
+        font-weight: 500;
+        z-index: 1;
+
+}
+
+.sbt-btn:hover {
+    background: #e96d3f ;
+    transition: .5s ;
+    color: #fff;
+}
+
+.footer-container {
+    background: #484545 ;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 4%;
+}
+
+.footer-note {
+    width: 40%;
+    max-width: 50rem
+}
+
+.footer-sub {
+    margin-top: 2rem;
+    color: #eee;
+    font-size: 1.2rem;
+    line-height: 1.7
+}
+
+.footer-social h2 { 
+    letter-spacing: .3rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-social a {
+     color:#fff;
+     padding: 1rem .4rem;
+     font-size: 1.4rem;
+}
+
+@media screen and (min-width:800px) {
+    html {
+        font-size: 96%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 76%;
+    }
+}
